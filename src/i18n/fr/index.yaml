@@ -18,7 +18,7 @@ home:
     empty: Aucun mot
     jotting: '{count} notes'
     note: '{count} écrits'
-  latest: Derniers
+  latest: Récemment publiés
   prefaces: Préfaces
 jotting:
   empty: Aucune note disponible

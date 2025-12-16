@@ -59,7 +59,7 @@ export const GET: APIRoute = async ({ site, params }) => {
 
 		items.push(...notes);
 	}
-
+	/*
 	if (sections === "*" || sections.includes("jotting")) {
 		const jottings = await getCollection("jotting", jotting => {
 			// Apply filtering criteria
@@ -78,6 +78,7 @@ export const GET: APIRoute = async ({ site, params }) => {
 
 		items.push(...jottings);
 	}
+	*/
 
 	// Sort all items by timestamp and limit to configured number
 	items = items

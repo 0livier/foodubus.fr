@@ -109,7 +109,7 @@ onMount(() => {
 						{#if note.data.series}<span class="my-0.5 mx-1 border-e-[1.75px] self-stretch"></span>{/if}
 						<a href={getRelativeLocaleUrl(locale, `/note/${monolocale ? note.id : note.id.split("/").slice(1).join("/")}`)} class="link">{note.data.title}</a>
 					</div>
-					<time datetime={note.data.timestamp.toISOString()} class="font-mono text-[0.65rem] leading-none text-remark">{Time(note.data.timestamp)}</time>
+					<time datetime={note.data.timestamp.toISOString()} class="font-mono text-[0.65rem] leading-none text-remark">{Time.date.locale(note.data.timestamp, locale)}</time>
 				</div>
 				<span class="inline-flex items-center sm:justify-end gap-1 flex-wrap content-start sm:ms-auto text-remark">
 					{#each note.data.tags as tag}

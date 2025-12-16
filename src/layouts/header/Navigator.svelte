@@ -14,10 +14,10 @@ const t = i18nit(locale);
 // Define home route and navigation routes configuration
 const homeRoute = getRelativeLocaleUrl(locale);
 const routes: { path: string; extra?: string[]; icon: `${string}--${string}`; label: string }[] = [
-	{ label: t("navigation.home"), path: homeRoute, extra: [getRelativeLocaleUrl(locale, "/preface")], icon: "lucide--bus" },
-	{ label: t("navigation.note"), path: getRelativeLocaleUrl(locale, "/note"), icon: "lucide--notebook-pen" },
-	{ label: t("navigation.jotting"), path: getRelativeLocaleUrl(locale, "/jotting"), icon: "lucide--feather" },
-	{ label: t("navigation.about"), path: getRelativeLocaleUrl(locale, "/about"), icon: "lucide--at-sign" }
+	{ label: t("navigation.home"), path: homeRoute, extra: [getRelativeLocaleUrl(locale, "/preface")], icon: "lucide--bus" }
+	,{ label: t("navigation.note"), path: getRelativeLocaleUrl(locale, "/note"), icon: "lucide--notebook-pen" }
+	//,{ label: t("navigation.jotting"), path: getRelativeLocaleUrl(locale, "/jotting"), icon: "lucide--feather" }
+	//,{ label: t("navigation.about"), path: getRelativeLocaleUrl(locale, "/about"), icon: "lucide--at-sign" }
 ];
 
 /**

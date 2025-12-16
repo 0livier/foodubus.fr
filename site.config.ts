@@ -6,7 +6,7 @@ const config = siteConfig({
 	author: {
 		name: "Olivier Garcia",
 		email: "foudubus@lol.cat",
-		link: "https://foudubus.fr"
+		link: "https://lol.cat"
 	},
 	description: "Les Editions du Fou du Bus",
 	copyright: {

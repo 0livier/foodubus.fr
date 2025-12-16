@@ -1,15 +1,16 @@
 ---
 timestamp: 2025-12-16 13:30:21+00:00
 ---
+# Être barré·e, c'est nécessaire
 
-# On l’a toutes et tous déjà croisé
+On l'a toutes et tous déjà croisée. La personne qui parle seule dans le bus de 18 h. Cheveux arc-en-ciel, un chat sur l'épaule, ou qui s'ambiance sur une musique bien trop forte. Les gens détournent le regard. Trop bizarre. Trop intense.
 
-Celui ou celle qui parle seul dans le bus de 18 h. Qui rit d’un truc que personne d’autre ne voit. Qui regarde par la fenêtre comme s’iel déchiffrait les secrets de l’univers dans le reflet des façades, ou qui s’habille autrement. Gothique, rococo, dandy.
+Et parfois... On entend une phrase tellement évidente qu'on se demande comment on n'y avait jamais pensé. Un rire franc qui coupe le silence triste des transports.
 
-Les gens détournent le regard. Trop bizarre. Trop intense. Trop présent·e.
+**C'est un peu ça, le fou du bus. Une fissure dans la normalité. Quelqu'un qui refuse les cases.**
 
-Et parfois, un truc qui fait tilt. Une déclamation tellement simple qu’on se demande comment on ne l’avait jamais vue. Ou une idiotie marmonnée. Un rire franc, provocant, qui coupe avec le silence triste des transports.
+La littérature se gare trop souvent dans les beaux quartiers. En SUV. Les grandes maisons ne froissent personne et publient au moment qui maximise les profits. Quelle folie.
 
-**C’est un peu ça, le fou du bus**. Pas un diagnostic - une fissure dans la normalité. Quelqu’un qui refuse les cases. Qui voit le monde de travers - ou peut-être plus droit que nous. Génie ? Taré·e ? Les deux ? On ne sait pas, et c’est justement ça qui est intéressant.
+Ici, on distribue au fil de l'eau ce qu'on aimerait avoir dans le bus un lundi matin gris. Ce qui nous fait dire tout haut "Putain, oui." Et _passer_ pour des fous.
 
-**Montez. On part entre deux arrêts.**
+**Montez. On va se marrer.**
