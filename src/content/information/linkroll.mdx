@@ -1,0 +1,36 @@
+import Linkroll from "$components/Linkroll.astro";
+
+export const links = [
+	{
+		title: "Astro",
+		url: "https://astro.build/",
+		image: "https://astro.build/favicon.svg",
+		description: "Le framework web pour les sites web axés sur le contenu.",
+		type: "resources"
+	},
+	{
+		title: "Svelte",
+		url: "https://svelte.dev/",
+		image: "https://svelte.dev/favicon.png",
+		description: "Développement web pour le reste d'entre nous.",
+		type: "technology"
+	},
+	{
+		title: "GitHub",
+		url: "https://github.com",
+		image: "https://github.githubassets.com/favicons/favicon.svg",
+		description: "L'avenir de la construction se fait ensemble.",
+		type: "insights"
+	}
+];
+
+Le thème **ne fournit pas** d'interface d'application en ligne pour les liens externes, et il est recommandé que les webmasters gèrent manuellement leurs propres listes de liens.
+
+L'auteur encourage chaque webmaster à considérer les liens externes comme des recommandations authentiques et précieuses, incluant uniquement les sites qu'il **apprécie vraiment, lit régulièrement ou est prêt à partager**.
+
+<Linkroll locale={props.locale} links={links} />
+
+Plutôt que d'ajouter au hasard des liens mutuels pour l'échange ou à des fins purement SEO, l'auteur espère que chaque lien représente une **résonance de contenu** et une **reconnaissance de valeur**, construisant un réseau de sites plein de personnalité et de chaleur.
+
+Si vous décidez d'afficher des liens externes, considérez-les comme une extension du style de votre site, en les intégrant avec votre contenu pour devenir une partie fiable de votre site.
+

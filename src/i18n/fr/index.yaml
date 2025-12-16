@@ -1,0 +1,59 @@
+about:
+  introduction: Introduction
+  linkroll: Linkroll
+feed:
+  address: Adresse d'abonnement
+  copy:
+    failure: La copie a échoué, veuillez copier l'adresse d'abonnement manuellement.
+    name: Copier
+    success: Adresse d'abonnement copiée dans le presse-papiers !
+  description: Cette page est une source d'abonnement au contenu au format Atom.
+  last: Dernière mise à jour
+  usage: >-
+    Vous pouvez ajouter l'adresse actuelle dans n'importe quel lecteur compatible
+    pour vous abonner à ce contenu et recevoir les dernières mises à jour en temps réel.
+  visit: Ceci est la page de flux. Visitez {title} pour l'expérience complète du site web.
+home:
+  heatmap:
+    empty: Aucun mot
+    jotting: '{count} notes'
+    note: '{count} écrits'
+  latest: Derniers
+  prefaces: Préfaces
+jotting:
+  empty: Aucune note disponible
+  tag: Tag
+language: Français
+navigation:
+  about: À propos
+  home: Accueil
+  jotting: Notes
+  note: Écrits
+  policy: Politique
+  preface: Préface
+  subscription: Abonnement
+note:
+  contents: Table des matières
+  empty: Aucun article disponible
+  series: Série
+  tag: Tag
+  top: Retour en haut
+read:
+  words: '{words} mots'
+sensitive:
+  back: Retour à la liste
+  continue: Je comprends, continuer la lecture
+  description: >-
+    Ce contenu peut contenir du matériel explicite, violent, sanglant ou
+    émotionnellement déclencheur.
+  feed: >
+    <p>Ce contenu peut contenir du matériel explicite, violent, sanglant ou
+    émotionnellement déclencheur.</p>
+
+    <p>Pour lire, veuillez visiter le <a href="{link}">lien original</a>.</p>
+  icon: Contient du contenu sensible
+  title: Avertissement de contenu
+  warning: Si ce contenu pourrait affecter votre santé mentale, veuillez partir immédiatement !
+statistics: A écrit {words} mots
+theme: 'Thème: ThoughtLite'
+

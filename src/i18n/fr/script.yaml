@@ -1,0 +1,61 @@
+new:
+  article:
+    start: |-
+      ## Commencer à écrire
+
+      Commencez votre contenu ici...
+  cancel: Opération annulée
+  created: Fichier créé avec succès !
+  creating: Création du fichier...
+  done: Terminé ! Bonne écriture !
+  error: Une erreur s'est produite
+  jotting:
+    description: Aperçus brefs, pensées éparses ou observations quotidiennes
+    name: Note
+  note:
+    description: Œuvres approfondies, soigneusement conçues et longues
+    name: Article
+  open:
+    error: Échec de l'ouverture de VS Code
+    message: Voulez-vous ouvrir ce fichier dans VS Code ?
+  preface:
+    description: Mises à jour de vie, annonces du site ou philosophie créative
+    name: Préface
+    start: Commencez votre contenu ici...
+  preview: Voici le contenu qui sera créé à {path}
+  step:
+    confirm: Voulez-vous procéder à la création de ce fichier ?
+    description:
+      name: Description (optionnelle)
+      placeholder: Brève description du contenu...
+    id:
+      name: ID du contenu (Nom de fichier)
+      placeholder: Entrez l'ID du contenu...
+      validate: >-
+        L'ID du contenu ne peut contenir que des lettres, des chiffres, des
+        tirets, et ne peut pas commencer ou se terminer par un tiret
+    language: Sélectionner la langue
+    options:
+      draft: Marquer comme brouillon
+      name: Sélectionner des options supplémentaires
+      sensitive: Marquer comme contenu sensible
+      toc: Afficher la table des matières
+      top: Épingler ce contenu
+    overwrite: Le fichier {path} existe déjà. Écraser ?
+    series:
+      name: Nom de la série (optionnel)
+      placeholder: Laisser vide si ce n'est pas une série
+    structure:
+      flat: Fichier markdown unique
+      folder: Dossier avec fichier index (pour inclure des images)
+      name: Quelle structure de fichier souhaitez-vous utiliser ?
+    tags:
+      name: Tags (séparés par des virgules, optionnel)
+      placeholder: 'ex: Guide, Astro, Tutoriel'
+    title:
+      name: Titre de l'article
+      placeholder: Entrez le titre…
+      validate: Le titre ne peut pas être vide
+    type: Sélectionner le type de contenu
+  welcome: Créer un nouvel article
+
