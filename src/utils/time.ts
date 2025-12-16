@@ -55,7 +55,13 @@ namespace Time {
 		 * @returns Localized date string in medium format (e.g., "Jan 15, 2024")
 		 */
 		export function locale(time?: Date | number | string, locale: string = navigator.language, timezone: string = defaultTimezone): string {
-			return datetime(time, timezone).setLocale(locale).toLocaleString(DateTime.DATE_MED);
+			return datetime(time, timezone)
+				.setLocale(locale)
+				.toLocaleString({
+					day: "numeric",
+					month: "short",
+					year: "numeric"
+				});
 		}
 
 		/**
