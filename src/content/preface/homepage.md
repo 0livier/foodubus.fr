@@ -3,9 +3,9 @@ timestamp: 2025-12-16 13:30:21+00:00
 ---
 # Être barré·e, c'est nécessaire
 
-On l'a toutes et tous déjà croisée. La personne qui parle seule dans le bus de 18 h. Cheveux arc-en-ciel, un chat sur l'épaule, ou qui s'ambiance sur une musique bien trop forte. Les gens détournent le regard. Trop bizarre. Trop intense.
+On l'a toutes et tous déjà croisée. La personne qui parle seule dans le bus de 18 h. Un chat sur l'épaule. Qui s'ambiance sur une musique bien trop forte. Dandy, gothique, rococo. Tatouée. Les gens détournent le regard. Trop bizarre. Trop intense.
 
-Et parfois... On entend une phrase tellement évidente qu'on se demande comment on n'y avait jamais pensé. Un rire franc qui coupe le silence triste des transports.
+Et parfois... On entend une phrase tellement évidente qu'on se demande comment on n'y avait jamais pensé. Un rire franc qui coupe le silence triste des transports. Un regard qui nous dépasse.
 
 **C'est un peu ça, le fou du bus. Une fissure dans la normalité. Quelqu'un qui refuse les cases.**
 

@@ -60,14 +60,6 @@
 	}
 }
 
-/* Language-specific fonts */
-:lang(zh-cn) {
-	--font-serif: "Noto Serif SC", serif;
-}
-
-:lang(ja) {
-	--font-serif: "Noto Serif JP", serif;
-}
 
 /* Manual theme overrides */
 [data-theme="light"] {
@@ -311,4 +303,8 @@ input[type="checkbox"].switch {
 
 [data-theme="dark"]::view-transition-new(root) {
 	z-index: 1;
+}
+
+header a, h1 {
+	font-family: "Barriecito", system-ui !important;
 }

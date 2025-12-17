@@ -36,86 +36,94 @@ import figure from "./src/utils/remark/figure";
 
 import siteConfig from "./site.config";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "https://thought-lite.vercel.app",
-	trailingSlash: "never",
-	i18n: {
-		...siteConfig.i18n,
-		routing: {
-			redirectToDefaultLocale: false,
-			prefixDefaultLocale: false
-		}
+  site: "https://thought-lite.vercel.app",
+  trailingSlash: "never",
+
+  i18n: {
+      ...siteConfig.i18n,
+      routing: {
+          redirectToDefaultLocale: false,
+          prefixDefaultLocale: false
+      }
 	},
-	markdown: {
-		remarkPlugins: [
-			[GFM, { singleTilde: false }],
-			ins,
-			mark,
-			spoiler,
-			attr,
-			CJK,
-			[CJKStrikethrough, { singleTilde: false }],
-			math,
-			gemoji,
-			footnote,
-			abbr,
-			[table, { colspanWithEmpty: true }],
-			wrapper,
-			directive,
-			ruby,
-			[alerts, { legacyTitle: true }],
-			reading
-		],
-		remarkRehype: {
-			footnoteLabel: null,
-			footnoteLabelTagName: "p",
-			footnoteLabelProperties: {
-				className: ["hidden"]
-			},
-			handlers: {
-				...tableHandler
-			}
-		},
-		rehypePlugins: [
-			ids,
-			[anchor, { behavior: "wrap" }],
-			[links, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }],
-			katex,
-			figure,
-			sectionize
-		],
-		smartypants: false,
-		shikiConfig: {
-			themes: {
-				light: {
-					...githubLight,
-					colorReplacements: {
-						"#fff": "var(--block-color)"
-					}
-				},
-				dark: "dark-plus"
-			},
-			transformers: [
-				copy({
-					duration: 1500
-				})
-			]
-		}
+
+  markdown: {
+      remarkPlugins: [
+          [GFM, { singleTilde: false }],
+          ins,
+          mark,
+          spoiler,
+          attr,
+          CJK,
+          [CJKStrikethrough, { singleTilde: false }],
+          math,
+          gemoji,
+          footnote,
+          abbr,
+          [table, { colspanWithEmpty: true }],
+          wrapper,
+          directive,
+          ruby,
+          [alerts, { legacyTitle: true }],
+          reading
+      ],
+      remarkRehype: {
+          footnoteLabel: null,
+          footnoteLabelTagName: "p",
+          footnoteLabelProperties: {
+              className: ["hidden"]
+          },
+          handlers: {
+              ...tableHandler
+          }
+      },
+      rehypePlugins: [
+          ids,
+          [anchor, { behavior: "wrap" }],
+          [links, { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] }],
+          katex,
+          figure,
+          sectionize
+      ],
+      smartypants: false,
+      shikiConfig: {
+          themes: {
+              light: {
+                  ...githubLight,
+                  colorReplacements: {
+                      "#fff": "var(--block-color)"
+                  }
+              },
+              dark: "dark-plus"
+          },
+          transformers: [
+              copy({
+                  duration: 1500
+              })
+          ]
+      }
 	},
-	vite: {
-		// @ts-expect-error
-		plugins: [yaml(), tailwindcss()]
+
+  vite: {
+      // @ts-expect-error
+      plugins: [yaml(), tailwindcss()]
 	},
-	integrations: [
-		svelte(),
-		mdx(),
-		sitemap(),
-		swup({
-			globalInstance: true,
-			preload: false,
-			smoothScrolling: false,
-			progress: true
-		})
-	]
+
+  integrations: [
+      svelte(),
+      mdx(),
+      sitemap(),
+      swup({
+          globalInstance: true,
+          preload: false,
+          smoothScrolling: false,
+          progress: true
+      })
+	],
+
+  adapter: cloudflare()
 });
