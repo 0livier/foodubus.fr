@@ -34,7 +34,8 @@
 		"lint": "biome lint",
 		"count": "git log --pretty=tformat: --numstat | grep -v package | awk '{ A += $1; S += $2; T += $1 - $2 } END { printf \"+ %s\tLines\\n- %s\tLines\\n= %s\tLines\\n\", A, S, T }'",
 		"prepare": "husky",
-		"preinstall": "npx only-allow pnpm"
+		"preinstall": "npx only-allow pnpm",
+		"deploy": "pnpm build && npx wrangler versions upload"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.12",
@@ -106,7 +107,8 @@
 		"prettier-plugin-svelte": "^3.4.0",
 		"satori": "^0.18.3",
 		"sharp": "^0.34.5",
-		"tsx": "^4.21.0"
+		"tsx": "^4.21.0",
+		"wrangler": "^3.0.0"
 	},
 	"lint-staged": {
 		"*.{js,ts,json,jsonc,css,svelte,astro}": [
