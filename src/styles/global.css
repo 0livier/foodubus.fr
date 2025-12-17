@@ -2,25 +2,28 @@
 
 /* Design tokens: light & dark values, then current tokens (default to light) */
 :root {
-	/* Light theme colors */
-	--primary-color-light: #2a2a28;
-	--secondary-color-light: #50504d;
-	--remark-color-light: #757575;
-	--weak-color-light: #9f9f9c;
-	--background-color-light: #fffffd;
-	--block-color-light: #eeeeee;
-	--shadow-color-light: #cdcdcc;
-	--selection-color-light: #adadacc3;
+/* Light theme colors */
+--primary-color-light: #181718;
+--secondary-color-light: #4a4748;
+--remark-color-light: #6a6866;
+--weak-color-light: #8c8a86;
+--background-color-light: #fffef8;
+--block-color-light: #f1efea;
+--shadow-color-light: #d6d3cc;
+--selection-color-light: #f5c54266;
+--accent-color-light: #c58a00;
 
-	/* Dark theme colors */
-	--primary-color-dark: #dddddb;
-	--secondary-color-dark: #aaaaa8;
-	--remark-color-dark: #a5a5a5;
-	--weak-color-dark: #5d5d5a;
-	--background-color-dark: #0e0e0c;
-	--block-color-dark: #1e1e1e;
-	--shadow-color-dark: #323231;
-	--selection-color-dark: #adadacc3;
+/* Dark theme colors */
+--primary-color-dark: #e8e6df;
+--secondary-color-dark: #9c9a94;
+--remark-color-dark: #9f9d96;
+--weak-color-dark: #7a7872;
+--background-color-dark: #0b0b0c;
+--block-color-dark: #161615;
+--shadow-color-dark: #2a2a28;
+--selection-color-dark: #f5c54255;
+--accent-color-dark: #f5c542;
+
 
 	/* Default to light values */
 	--primary-color: var(--primary-color-light);
@@ -31,7 +34,7 @@
 	--block-color: var(--block-color-light);
 	--shadow-color: var(--shadow-color-light);
 	--selection-color: var(--selection-color-light);
-
+	--accent-color: var(--accent-color-light);
 	--font-serif: "Noto Serif", serif;
 	--font-monospace: "Maple Mono NF CN", monospace;
 	--font-cursive: "Playwrite MX", "The Peak Font Plus", serif;
@@ -51,6 +54,7 @@
 		--block-color: var(--block-color-dark);
 		--shadow-color: var(--shadow-color-dark);
 		--selection-color: var(--selection-color-dark);
+		--accent-color: var(--accent-color-dark);
 	}
 
 	.astro-code,
@@ -71,6 +75,7 @@
 	--block-color: var(--block-color-light);
 	--shadow-color: var(--shadow-color-light);
 	--selection-color: var(--selection-color-light);
+	--accent-color: var(--accent-color-light);
 }
 
 [data-theme="dark"] {
@@ -82,6 +87,7 @@
 	--block-color: var(--block-color-dark);
 	--shadow-color: var(--shadow-color-dark);
 	--selection-color: var(--selection-color-dark);
+	--accent-color: var(--accent-color-dark);
 }
 
 [data-theme="dark"] .astro-code,
@@ -305,6 +311,39 @@ input[type="checkbox"].switch {
 	z-index: 1;
 }
 
-header a, h1 {
-	font-family: "Barriecito", system-ui !important;
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Great Vibes", cursive;
+    font-weight: 400;
+	font-style: normal;
 }
+
+header a, blockquote h4, aside h4 {
+	font-family: "Special Elite", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.5rem;
+}
+
+h1, h1 a, footer a {
+	color:var(--accent-color) !important; 
+}
+
+p { line-height: 1.7; font-size: 1.05rem; }
+
+body{ color:var(--primary-color); }
+a { color:var(--secondary-color); text-decoration-thickness:2px; text-underline-offset:3px; }
+.meta, time, .muted { color:var(--remark-color); }
+.text-secondary, .text-remark{ color:var(--remark-color); }
+
+hr{ border-color: color-mix(in srgb, var(--remark-color) 45%, transparent); }
+
+.block.bg-primary {
+	background-color: var(--accent-color);
+}
+
+p { line-height: 1.75; }
+.home h1 { margin-bottom: .6rem; }
+.recent { margin-top: 2.5rem; }
+.pattern { opacity: .18; }

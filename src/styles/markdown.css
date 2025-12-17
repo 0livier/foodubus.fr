@@ -73,9 +73,11 @@
 				text-decoration: none;
 
 				&::after {
-					content: "󰌷 ";
+					content: " 🔗 ";
+					font-family: monospace;
+
 					margin: 0 0.3em;
-					font-size: 0.8em;
+					font-size: 0.6em;
 					font-weight: normal;
 					opacity: 0;
 					transition: opacity 0.15s ease-in-out;

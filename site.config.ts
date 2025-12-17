@@ -1,7 +1,7 @@
 import siteConfig from "./src/utils/config";
 
 const config = siteConfig({
-	title: "Editions du fou du bus",
+	title: "Editions du Fou du Bus",
 	prologue: "",
 	author: {
 		name: "Olivier Garcia",
