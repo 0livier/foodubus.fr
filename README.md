@@ -1,4 +1,4 @@
-# ThoughtLite
+# Le Fou du Bus
 
 <div align="center">
     <p>
