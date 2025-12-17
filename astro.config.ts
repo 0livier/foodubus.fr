@@ -40,7 +40,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://thought-lite.vercel.app",
+  site: "https://foudubus.fr",
   trailingSlash: "never",
 
   i18n: {
