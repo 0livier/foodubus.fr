@@ -319,6 +319,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-style: normal;
 }
 
+main > article > section > div > div > a {
+	font-family: "Great Vibes", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.3rem;
+}
+
 header a, blockquote h4, aside h4 {
 	font-family: "Special Elite", system-ui;
 	font-weight: 400;
