@@ -326,7 +326,7 @@ header a, blockquote h4, aside h4 {
 	font-size: 1.5rem;
 }
 
-h1, h1 a, footer a {
+h1, h1 a, footer a, a.link {
 	color:var(--accent-color) !important; 
 }
 
