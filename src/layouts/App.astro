@@ -44,9 +44,13 @@ const notoFonts: Record<string, string> = {
 		{article && [<meta property="article:author" content={author} />, <meta property="article:published_time" content={article.timestamp.toISOString()} />, article.section && <meta property="article:section" content={article.section} />, article.tags?.map((tag: string) => <meta property="article:tag" content={tag} />)]}
 
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<link rel="preconnect" href="https://fontsapi.zeoseven.com" />
