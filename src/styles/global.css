@@ -11,7 +11,7 @@
 --block-color-light: #f1efea;
 --shadow-color-light: #d6d3cc;
 --selection-color-light: #f5c54266;
---accent-color-light: #c58a00;
+--accent-color-light: #e5b532;
 
 /* Dark theme colors */
 --primary-color-dark: #e8e6df;
@@ -354,3 +354,44 @@ p { line-height: 1.75; }
 .home h1 { margin-bottom: .6rem; }
 .recent { margin-top: 2.5rem; }
 .pattern { opacity: .18; }
+
+.markdown { 
+	display: flow-root; /* ou display: block; */
+}
+
+.markdown figure:has(img) {
+	float: right;
+	margin: 0 0 1rem 1rem;
+	max-width: 40%;
+}
+
+.markdown figure:has(img) img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.markdown > * + * {
+	margin-top: 0.75rem; /* ajuste: 0.75rem, 1.25rem, etc */
+}
+
+@media (max-width: 900px) {
+	.markdown figure:has(img) {
+	  float: right;                 /* tu le gardes */
+	  width: clamp(120px, 32vw, 180px);
+	  margin: 0 0 0.75rem 0.75rem;
+	  max-width: none;
+	}
+  
+	.markdown figure:has(img) img {
+	  width: 100%;
+	  height: auto;
+	  max-height: 45vh;             /* évite que ça “mange” 40 lignes */
+	  object-fit: cover;            /* si tu veux couper plutôt que réduire */
+	  display: block;
+	}
+  
+	.markdown figure:has(img) figcaption {
+	  display: none;
+	}
+  }
