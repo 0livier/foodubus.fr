@@ -25,16 +25,16 @@
 --accent-color-dark: #f5c542;
 
 
-	/* Default to light values */
-	--primary-color: var(--primary-color-light);
-	--secondary-color: var(--secondary-color-light);
-	--remark-color: var(--remark-color-light);
-	--weak-color: var(--weak-color-light);
-	--background-color: var(--background-color-light);
-	--block-color: var(--block-color-light);
-	--shadow-color: var(--shadow-color-light);
-	--selection-color: var(--selection-color-light);
-	--accent-color: var(--accent-color-light);
+	/* Default to dark values */
+	--primary-color: var(--primary-color-dark);
+	--secondary-color: var(--secondary-color-dark);
+	--remark-color: var(--remark-color-dark);
+	--weak-color: var(--weak-color-dark);
+	--background-color: var(--background-color-dark);
+	--block-color: var(--block-color-dark);
+	--shadow-color: var(--shadow-color-dark);
+	--selection-color: var(--selection-color-dark);
+	--accent-color: var(--accent-color-dark);
 	--font-serif: "Noto Serif", serif;
 	--font-monospace: "Maple Mono NF CN", monospace;
 	--font-cursive: "Playwrite MX", "The Peak Font Plus", serif;
@@ -343,6 +343,11 @@ body{ color:var(--primary-color); }
 a { color:var(--secondary-color); text-decoration-thickness:2px; text-underline-offset:3px; }
 .meta, time, .muted { color:var(--remark-color); }
 .text-secondary, .text-remark{ color:var(--remark-color); }
+
+.ms-1.link {
+	color:var(--block-color) !important;
+	text-decoration: underline;
+}
 
 hr{ border-color: color-mix(in srgb, var(--remark-color) 45%, transparent); }
 
