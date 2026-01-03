@@ -7,7 +7,7 @@ toc: false
 top: 0
 ---
 
-![Une balade tranquille](images/fleuriste){.right}
+![Une balade tranquille](images/fleuriste.png){.right}
 Amoureux transi
 
 Le fleuriste contemple
