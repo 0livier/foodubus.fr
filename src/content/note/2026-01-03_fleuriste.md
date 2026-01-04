@@ -7,7 +7,6 @@ toc: false
 top: 0
 ---
 
-![Perdu dans ses pensées](images/fleuriste.png){.right}
 Amoureux transi
 
 Le fleuriste contemple
