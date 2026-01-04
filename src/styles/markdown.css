@@ -382,10 +382,10 @@
 			}
 		}
 
-		.poetry {
+		.poetry p {
 			font-family: "Cormorant Garamond", serif;
 			font-optical-sizing: auto;
-			font-weight: 1.1em;
+			font-size: 2rem;
 			font-style: normal;
 		}
 	}
