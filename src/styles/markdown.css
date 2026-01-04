@@ -385,7 +385,7 @@
 		.poetry p {
 			font-family: "Source Sans 3", sans-serif;
 			font-optical-sizing: auto;
-			font-size: 2rem;
+			font-size: 2rem !important;
 			font-style: normal;
 		}
 	}
