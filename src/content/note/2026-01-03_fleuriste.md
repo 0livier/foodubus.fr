@@ -7,8 +7,12 @@ toc: false
 top: 0
 ---
 
-amoureux transi
+<div class="poetry">
 
-le fleuriste contemple
+  amoureux transi
 
-ses belles pensées
+  le fleuriste contemple
+
+  ses belles pensées
+  
+</div>
