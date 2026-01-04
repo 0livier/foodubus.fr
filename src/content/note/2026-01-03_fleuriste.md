@@ -8,9 +8,11 @@ top: 0
 ---
 
 <div class="poetry">
-amoureux transi
 
-le fleuriste contemple
+  amoureux transi
 
-ses belles pensées
+  le fleuriste contemple
+
+  ses belles pensées
+  
 </div>
