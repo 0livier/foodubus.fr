@@ -381,5 +381,13 @@
 				text-align: inherit;
 			}
 		}
+
+		.poetry {
+			font-family: "Cormorant Garamond", serif;
+			font-optical-sizing: auto;
+			font-weight: 1.1em;
+			font-style: normal;
+			}
+		}
 	}
 }
