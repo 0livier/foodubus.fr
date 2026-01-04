@@ -7,8 +7,8 @@ toc: false
 top: 0
 ---
 
-Amoureux transi
+amoureux transi
 
-Le fleuriste contemple
+le fleuriste contemple
 
-Ses belles pensées
+ses belles pensées
