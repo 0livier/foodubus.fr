@@ -82,12 +82,13 @@ const CANCEL_MESSAGE = t("new.cancel");
 		information.title = title;
 		information.timestamp = timestamp;
 
-		// Slugify function: Convert title to URL-friendly slug
+		// Slugify function: Convert title to URL-friendly slug (hyphens only, no underscores)
 		// Normalizes Unicode, removes special characters, converts to lowercase and hyphens
 		const slugify = (text: string) =>
 			text
 				.toLowerCase()
 				.normalize("NFKC")
+				.replace(/_/g, "-")
 				.replace(/[^\p{L}\p{N}\s-]+/gu, "")
 				.trim()
 				.replace(/\s+/g, "-")
