@@ -55,5 +55,10 @@ sensitive:
   title: Avertissement de contenu
   warning: Si ce contenu pourrait affecter votre santé mentale, veuillez partir immédiatement !
 statistics: A écrit {words} mots
+tag:
+  count: '{count} contenu(s)'
+  empty: Aucun contenu avec ce tag.
+  heading: "Tag : {tag}"
+  title: "Tag : {tag}"
 theme: 'Thème: ThoughtLite'
 

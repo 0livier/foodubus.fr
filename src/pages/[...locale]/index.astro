@@ -7,6 +7,7 @@ import Base from "$layouts/Base.astro";
 import Heatmap from "$components/Heatmap.svelte";
 import Logo from "$icons/site-logo.svg";
 import i18nit from "$i18n";
+import { tagSlug } from "$utils/slug";
 
 export async function getStaticPaths() {
 	// Create path for each locale, omitting default locale from URL
@@ -105,7 +106,7 @@ const { Content } = preface ? await render(preface) : ({} as any);
 							</a>
 							<div class="flex gap-1">
 								{latest.data.tags?.map(tag => (
-									<a href={`${getRelativeLocaleUrl(locale, `/${latest.type}`)}?tag=${encodeURIComponent(tag)}`} class="text-remark text-sm link">
+									<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="text-remark text-sm link">
 										#{tag}
 									</a>
 								))}

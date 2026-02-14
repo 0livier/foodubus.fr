@@ -6,6 +6,7 @@ import { fade } from "svelte/transition";
 import { monolocale } from "$config";
 import Icon from "$components/Icon.svelte";
 import i18nit from "$i18n";
+import { tagSlug } from "$utils/slug";
 
 let { locale, jottings, tags: tagList }: { locale: string; jottings: any[]; tags: string[] } = $props();
 
@@ -84,7 +85,7 @@ onMount(() => {
 					</span>
 					<span class="flex gap-1">
 						{#each jotting.data.tags as tag}
-							<button onclick={() => switchTag(tag, true)} class="text-[0.825rem] text-remark">#{tag}</button>
+							<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="text-[0.825rem] text-remark link">#{tag}</a>
 						{/each}
 					</span>
 				</section>
@@ -116,7 +117,7 @@ onMount(() => {
 			<h4>{t("jotting.tag")}</h4>
 			<p>
 				{#each tagList as tag (tag)}
-					<button class:selected={tags.includes(tag)} onclick={() => switchTag(tag)}>{tag}</button>
+					<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="tag-link" class:selected={tags.includes(tag)}>{tag}</a>
 				{/each}
 			</p>
 		</section>
@@ -158,13 +159,14 @@ onMount(() => {
 				flex-wrap: wrap;
 				gap: 5px;
 
-				button {
+				a.tag-link {
 					border-bottom: 1px solid var(--primary-color);
 					padding: 0rem 0.35rem;
 					font-size: 0.9rem;
 					transition:
 						color 0.1s ease-in-out,
 						background-color 0.1s ease-in-out;
+					text-decoration: none;
 
 					&.selected {
 						color: var(--background-color);

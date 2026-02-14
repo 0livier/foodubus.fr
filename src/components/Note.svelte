@@ -7,6 +7,7 @@ import { monolocale } from "$config";
 import Time from "$utils/time";
 import Icon from "$components/Icon.svelte";
 import i18nit from "$i18n";
+import { tagSlug } from "$utils/slug";
 
 let { locale, notes, series: seriesList, tags: tagList }: { locale: string; notes: any[]; series: string[]; tags: string[] } = $props();
 
@@ -113,7 +114,7 @@ onMount(() => {
 				</div>
 				<span class="inline-flex items-center sm:justify-end gap-1 flex-wrap content-start sm:ms-auto text-remark">
 					{#each note.data.tags as tag}
-						<button onclick={() => switchTag(tag, true)} class="text-[0.875rem] sm:text-sm">#{tag}</button>
+						<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="text-[0.875rem] sm:text-sm link">#{tag}</a>
 					{/each}
 				</span>
 			</section>
@@ -154,7 +155,7 @@ onMount(() => {
 			<h4>{t("note.tag")}</h4>
 			<p>
 				{#each tagList as tag (tag)}
-					<button class:selected={tags.includes(tag)} onclick={() => switchTag(tag)}>{tag}</button>
+					<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="tag-link" class:selected={tags.includes(tag)}>{tag}</a>
 				{/each}
 			</p>
 		</section>
@@ -200,13 +201,15 @@ onMount(() => {
 				flex-wrap: wrap;
 				gap: 5px;
 
-				button {
+				button,
+				a.tag-link {
 					border-bottom: 1px solid var(--primary-color);
 					padding: 0rem 0.35rem;
 					font-size: 0.9rem;
 					transition:
 						color 0.1s ease-in-out,
 						background-color 0.1s ease-in-out;
+					text-decoration: none;
 
 					&.selected {
 						color: var(--background-color);

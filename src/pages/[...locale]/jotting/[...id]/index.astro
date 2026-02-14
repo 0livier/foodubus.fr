@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import config, { monolocale } from "$config";
 import Time from "$utils/time";
 import Base from "$layouts/Base.astro";
@@ -7,6 +8,7 @@ import Position from "$components/Position.astro";
 import Icon from "$components/Icon.svelte";
 import Sensitive from "$components/Sensitive.svelte";
 import i18nit from "$i18n";
+import { tagSlug } from "$utils/slug";
 
 export async function getStaticPaths() {
 	// Get all jottings excluding drafts
@@ -47,9 +49,14 @@ const t = i18nit(locale);
 				<time datetime={jotting.data.timestamp.toISOString()}><Icon name="lucide--calendar" />{Time.date.locale(jotting.data.timestamp, locale)}</time>
 				{
 					!!jotting.data.tags?.length && (
-						<span>
+						<span class="inline-flex flex-wrap items-center gap-x-1 gap-y-0.5">
 							<Icon name="lucide--hash" />
-							{jotting.data.tags?.join("; ")}
+							{jotting.data.tags?.map((tag, i) => (
+								<>
+									{i ? "; " : ""}
+									<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="link text-inherit">#{tag}</a>
+								</>
+							))}
 						</span>
 					)
 				}
