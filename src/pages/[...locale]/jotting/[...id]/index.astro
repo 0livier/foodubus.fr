@@ -9,6 +9,7 @@ import Icon from "$components/Icon.svelte";
 import Sensitive from "$components/Sensitive.svelte";
 import i18nit from "$i18n";
 import { tagSlug } from "$utils/slug";
+import { canonicalPath } from "$utils/canonical-url";
 
 export async function getStaticPaths() {
 	// Get all jottings excluding drafts
@@ -39,9 +40,23 @@ const { jotting } = Astro.props;
 const { Content, remarkPluginFrontmatter: frontmatter } = await render(jotting);
 
 const t = i18nit(locale);
+
+const canonicalPathname = canonicalPath(Astro.url.pathname);
+const articleCanonicalUrl = new URL(canonicalPathname, Astro.site);
+const articleImageUrl = new URL(`${canonicalPathname}/graph.png`, Astro.site);
 ---
 
-<Base title={jotting.data.title} {locale} description={jotting.data.description} article={{ timestamp: jotting.data.timestamp, tags: jotting.data.tags }}>
+<Base
+	title={jotting.data.title}
+	{locale}
+	description={jotting.data.description ?? ""}
+	article={{
+		timestamp: jotting.data.timestamp,
+		tags: jotting.data.tags,
+		mainEntityOfPage: articleCanonicalUrl.toString(),
+		image: articleImageUrl.toString()
+	}}
+>
 	<main class="flex flex-col gap-6">
 		<header class="flex flex-col gap-4">
 			<h1>{jotting.data.title}</h1>

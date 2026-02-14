@@ -1,4 +1,5 @@
 ---
+import config from "$config";
 import { canonicalPath } from "$utils/canonical-url";
 
 interface Props {
@@ -10,6 +11,8 @@ interface Props {
 		timestamp: Date;
 		section?: string;
 		tags?: string[];
+		mainEntityOfPage?: string;
+		image?: string;
 	};
 }
 
@@ -17,6 +20,54 @@ const { title, subtitle, description, author, article } = Astro.props;
 
 const canonicalPathname = canonicalPath(Astro.url.pathname);
 const canonicalUrl = new URL(canonicalPathname, Astro.site);
+const siteUrl = Astro.site?.toString() ?? canonicalUrl.origin;
+
+// WebSite JSON-LD (all pages)
+const websiteJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: title,
+	url: siteUrl,
+	description: config.description,
+	inLanguage: Astro.currentLocale ?? config.i18n.defaultLocale
+};
+
+// BlogPosting JSON-LD (article pages only) – required for Google Rich Results
+const blogPostingJsonLd =
+	article &&
+	article.mainEntityOfPage &&
+	article.image &&
+	subtitle
+		? {
+				"@context": "https://schema.org",
+				"@type": "BlogPosting",
+				headline: subtitle,
+				description,
+				url: article.mainEntityOfPage,
+				mainEntityOfPage: {
+					"@type": "WebPage",
+					"@id": article.mainEntityOfPage
+				},
+				image: {
+					"@type": "ImageObject",
+					url: article.image
+				},
+				datePublished: article.timestamp.toISOString(),
+				dateModified: article.timestamp.toISOString(),
+				author: {
+					"@type": "Person",
+					name: author ?? config.author.name
+				},
+				publisher: {
+					"@type": "Organization",
+					name: title,
+					logo: {
+						"@type": "ImageObject",
+						url: new URL("graph.png", Astro.site).toString()
+					}
+				}
+			}
+		: null;
 
 // Locale-specific Noto Serif font mappings for Google Fonts
 const notoFonts: Record<string, string> = {
@@ -70,6 +121,11 @@ const notoFonts: Record<string, string> = {
 		<link rel="stylesheet" href="https://fontsapi.zeoseven.com/556/main/result.css" crossorigin />
 
 		{Astro.currentLocale && notoFonts[Astro.currentLocale] && <link rel="stylesheet" href={notoFonts[Astro.currentLocale]} />}
+
+		<script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+		{blogPostingJsonLd && (
+			<script type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd)} />
+		)}
 
 		<script is:inline>
 			var theme = localStorage.getItem("theme");
