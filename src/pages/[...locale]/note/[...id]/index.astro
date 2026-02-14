@@ -82,7 +82,7 @@ const articleImageUrl = new URL(`${canonicalPathname}/graph.png`, Astro.site);
 							{note.data.tags?.map((tag, i) => (
 								<>
 									{i ? "; " : ""}
-									<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="link text-inherit">#{tag}</a>
+									<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="link text-inherit !text-[1rem]">{tag}</a>
 								</>
 							))}
 						</span>

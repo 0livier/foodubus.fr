@@ -114,7 +114,7 @@ onMount(() => {
 				</div>
 				<span class="inline-flex items-center sm:justify-end gap-1 flex-wrap content-start sm:ms-auto text-remark">
 					{#each note.data.tags as tag}
-						<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="text-[0.875rem] sm:text-sm link">#{tag}</a>
+						<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="text-[1rem] link">{tag}</a>
 					{/each}
 				</span>
 			</section>
