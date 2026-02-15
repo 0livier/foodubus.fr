@@ -49,9 +49,9 @@ jottings.forEach(jotting => {
 		<figure class="relative group/pop">
 			<i class="block w-2.5 h-2.5 bg-primary {number > 2 ? 'opacity-100' : number > 1 ? 'opacity-80' : number > 0 ? 'opacity-60' : 'opacity-15'}"></i>
 
-			<div class="absolute start-0 bottom-full w-max -translate-x-1/2 rtl:translate-x-1/2 flex flex-col mb-1 rounded-sm px-2 py-2 text-xs text-background bg-primary pop">
-				<time class="font-bold">{Time.date.locale(day.date, locale)}</time>
-				{#if number > 0}
+			{#if number > 0}
+				<div class="absolute start-0 bottom-full w-max -translate-x-1/2 rtl:translate-x-1/2 flex flex-col mb-1 rounded-sm px-2 py-2 text-xs text-background bg-primary pop">
+					<time class="font-bold">{Time.date.locale(day.date, locale)}</time>
 					{#if day.notes.length > 0}
 						<p class="my-1">{t("home.heatmap.note", { count: day.notes.length })}：</p>
 						<ul class="flex flex-col gap-0.5">
@@ -68,10 +68,8 @@ jottings.forEach(jotting => {
 							{/each}
 						</ul>
 					{/if}
-				{:else}
-					<p class="mt-1">{t("home.heatmap.empty")}</p>
-				{/if}
-			</div>
+				</div>
+			{/if}
 		</figure>
 	{/each}
 </section>
