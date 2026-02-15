@@ -4,6 +4,7 @@
   import config, { monolocale } from "$config";
   import Icon from "$components/Icon.svelte";
   import i18nit from "$i18n";
+  import { canonicalPagePath } from "$utils/canonical-url";
   import ThemeSwitcher from "./ThemeSwitcher.svelte";
   import Menu from "./Menu.svelte";
 
@@ -17,10 +18,10 @@
     {
       label: t("navigation.home"),
       path: homeRoute,
-      extra: [getRelativeLocaleUrl(locale, "/preface")],
+      extra: [getRelativeLocaleUrl(locale, canonicalPagePath("/preface"))],
       icon: "lucide--bus"
     },
-    { label: t("navigation.note"), path: getRelativeLocaleUrl(locale, "/note"), icon: "lucide--notebook-pen" }
+    { label: t("navigation.note"), path: getRelativeLocaleUrl(locale, canonicalPagePath("/note")), icon: "lucide--notebook-pen" }
     //,{ label: t("navigation.jotting"), path: getRelativeLocaleUrl(locale, "/jotting"), icon: "lucide--feather" }
     //,{ label: t("navigation.about"), path: getRelativeLocaleUrl(locale, "/about"), icon: "lucide--at-sign" }
   ];
@@ -114,7 +115,7 @@
         {#snippet trigger()}<Icon name="lucide--earth" />{/snippet}
         <div data-no-swup class="contents">
           {#each config.i18n.locales as locale}
-            <a href={getRelativeLocaleUrl(locale as string, path)} lang={locale} aria-label={i18nit(locale)("language")}
+            <a href={getRelativeLocaleUrl(locale as string, path ? canonicalPagePath(path) : path)} lang={locale} aria-label={i18nit(locale)("language")}
               >{i18nit(locale)("language")}</a
             >
           {/each}

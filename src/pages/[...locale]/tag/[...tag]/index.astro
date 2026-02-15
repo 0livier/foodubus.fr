@@ -7,6 +7,7 @@ import Time from "$utils/time";
 import Icon from "$components/Icon.svelte";
 import i18nit from "$i18n";
 import { tagSlug } from "$utils/slug";
+import { canonicalPagePath } from "$utils/canonical-url";
 
 export async function getStaticPaths() {
 	const notes = await getCollection("note", (n) => !n.data.draft);
@@ -87,7 +88,7 @@ function itemId(item: (typeof items)[0]): string {
 	return monolocale ? item.id : item.id.split("/").slice(1).join("/");
 }
 function itemHref(item: (typeof items)[0]): string {
-	return getRelativeLocaleUrl(locale, `/${item.type}/${itemId(item)}`);
+	return getRelativeLocaleUrl(locale, canonicalPagePath(`/${item.type}/${itemId(item)}`));
 }
 ---
 

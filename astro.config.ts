@@ -41,7 +41,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://foudubus.fr",
-  trailingSlash: "never",
+  trailingSlash: "always",
 
   i18n: {
       ...siteConfig.i18n,

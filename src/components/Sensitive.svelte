@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Snippet } from "svelte";
 import { fade } from "svelte/transition";
 import i18nit from "$i18n";
+import { canonicalPagePath } from "$utils/canonical-url";
 
 let { locale, sensitive = false, back, children }: { locale: string; sensitive: boolean; back: string; children: Snippet } = $props();
 
@@ -26,7 +27,7 @@ if (sensitive) {
 			<button class="font-bold text-background bg-red-500 py-1 px-2 rounded-md" onclick={() => (sensitive = false)}>
 				{t("sensitive.continue")}
 			</button>
-			<a href={getRelativeLocaleUrl(locale, back)} class="flex items-center font-bold text-background bg-secondary py-1 px-2 rounded-md">
+			<a href={getRelativeLocaleUrl(locale, canonicalPagePath(back))} class="flex items-center font-bold text-background bg-secondary py-1 px-2 rounded-md">
 				{t("sensitive.back")}
 			</a>
 		</div>

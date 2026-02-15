@@ -9,7 +9,7 @@ import Icon from "$components/Icon.svelte";
 import Sensitive from "$components/Sensitive.svelte";
 import i18nit from "$i18n";
 import { tagSlug } from "$utils/slug";
-import { canonicalPath } from "$utils/canonical-url";
+import { canonicalPath, canonicalPagePath } from "$utils/canonical-url";
 
 export async function getStaticPaths() {
 	// Get all jottings excluding drafts
@@ -71,7 +71,7 @@ const articleImageUrl = new URL(`${canonicalPathname}/graph.png`, Astro.site);
 							{jotting.data.tags?.map((tag, i) => (
 								<>
 									{i ? "; " : ""}
-									<a href={getRelativeLocaleUrl(locale, `/tag/${tagSlug(tag)}`)} class="link text-inherit">#{tag}</a>
+									<a href={getRelativeLocaleUrl(locale, canonicalPagePath(`/tag/${tagSlug(tag)}`))} class="link text-inherit">#{tag}</a>
 								</>
 							))}
 						</span>
