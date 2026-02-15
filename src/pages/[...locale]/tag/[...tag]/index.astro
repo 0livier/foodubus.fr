@@ -7,6 +7,7 @@ import Time from "$utils/time";
 import Icon from "$components/Icon.svelte";
 import i18nit from "$i18n";
 import { tagSlug } from "$utils/slug";
+import { getTagIntro } from "$utils/tag-intros";
 import { canonicalPagePath } from "$utils/canonical-url";
 
 export async function getStaticPaths() {
@@ -46,9 +47,11 @@ export async function getStaticPaths() {
 	return paths;
 }
 
-const { locale = config.i18n.defaultLocale } = Astro.params;
+const { locale = config.i18n.defaultLocale, tag: tagSlugParam } = Astro.params;
 const { tags: tagList } = Astro.props;
 const tag = [...tagList].sort((a, b) => a.localeCompare(b))[0]; // primary tag for heading
+const tagSlug = typeof tagSlugParam === "string" ? tagSlugParam : tagSlugParam?.[0];
+const tagIntro = tagSlug ? getTagIntro(tagSlug) : undefined;
 
 const t = i18nit(locale);
 
@@ -98,6 +101,11 @@ function itemHref(item: (typeof items)[0]): string {
 			<h1>{t("tag.heading", { tag })}</h1>
 			<p class="text-secondary text-sm">{t("tag.count", { count: items.length })}</p>
 		</header>
+		{tagIntro && (
+			<p class="text-secondary max-w-prose">
+				{tagIntro}
+			</p>
+		)}
 		<ul class="flex flex-col gap-4">
 			{items.map((item) => (
 				<li>
