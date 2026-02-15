@@ -1,6 +1,31 @@
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
+/** Optional Open Graph overrides (per-note/jotting). When set, override defaults from title/description/graph.png. */
+const openGraphSchema = z
+	.object({
+		title: z.string().optional(),
+		description: z.string().optional(),
+		image: z.string().optional(), // Full URL or path from site root (e.g. /img/share.png)
+		imageAlt: z.string().optional(),
+		imageWidth: z.number().int().positive().optional(),
+		imageHeight: z.number().int().positive().optional()
+	})
+	.optional();
+
+/** Optional Twitter Card overrides. When set, override defaults (card, title, description, image). */
+const twitterSchema = z
+	.object({
+		card: z.enum(["summary", "summary_large_image", "app", "player"]).optional(),
+		title: z.string().optional(),
+		description: z.string().optional(),
+		image: z.string().optional(),
+		imageAlt: z.string().optional(),
+		site: z.string().optional(), // e.g. @site
+		creator: z.string().optional() // e.g. @author
+	})
+	.optional();
+
 /**
  * Note collection configuration
  * Represents main blog articles with comprehensive metadata
@@ -17,7 +42,9 @@ const note = defineCollection({
 		sensitive: z.boolean().default(false), // Marks content as sensitive
 		toc: z.boolean().default(false), // Whether to show table of contents
 		top: z.number().int().nonnegative().default(0), // Top priority for sorting (higher is more important)
-		draft: z.boolean().default(false) // Draft status (excludes from public listing)
+		draft: z.boolean().default(false), // Draft status (excludes from public listing)
+		openGraph: openGraphSchema,
+		twitter: twitterSchema
 	})
 });
 
@@ -35,7 +62,9 @@ const jotting = defineCollection({
 		description: z.string().optional(), // Brief description
 		sensitive: z.boolean().default(false), // Marks content as sensitive
 		top: z.number().int().nonnegative().default(0), // Top priority for sorting (higher is more important)
-		draft: z.boolean().default(false) // Draft status
+		draft: z.boolean().default(false), // Draft status
+		openGraph: openGraphSchema,
+		twitter: twitterSchema
 	})
 });
 

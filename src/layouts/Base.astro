@@ -13,7 +13,14 @@ import "katex/dist/katex.min.css";
 
 let route = Astro.url.pathname;
 
-const { locale = config.i18n.defaultLocale, title: subtitle, description = config.description, article } = Astro.props;
+const {
+	locale = config.i18n.defaultLocale,
+	title: subtitle,
+	description = config.description,
+	article,
+	openGraph: openGraphOverride,
+	twitter: twitterOverride
+} = Astro.props;
 const title = config.title;
 ---
 
@@ -40,7 +47,15 @@ const title = config.title;
 	document.addEventListener("astro:page-load", initialize);
 </script>
 
-<App {title} {subtitle} {description} {article} author={config.author.name}>
+<App
+	{title}
+	{subtitle}
+	{description}
+	{article}
+	author={config.author.name}
+	openGraphOverride={openGraphOverride}
+	twitterOverride={twitterOverride}
+>
 	<Tip client:load />
 	<div class="flex flex-col mx-auto px-3 w-[min(100%,1000px)]">
 		<div id="body" class="flex flex-col min-h-screen">

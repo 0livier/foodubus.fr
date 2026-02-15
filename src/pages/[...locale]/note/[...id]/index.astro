@@ -61,6 +61,8 @@ const articleImageUrl = new URL(`${canonicalPathname}/graph.png`, Astro.site);
 		mainEntityOfPage: articleCanonicalUrl.toString(),
 		image: articleImageUrl.toString()
 	}}
+	openGraph={note.data.openGraph}
+	twitter={note.data.twitter}
 >
 	<main class="flex flex-col gap-6">
 		<header class="flex flex-col gap-4">

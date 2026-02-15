@@ -15,9 +15,26 @@ interface Props {
 		mainEntityOfPage?: string;
 		image?: string;
 	};
+	openGraphOverride?: {
+		title?: string;
+		description?: string;
+		image?: string;
+		imageAlt?: string;
+		imageWidth?: number;
+		imageHeight?: number;
+	};
+	twitterOverride?: {
+		card?: "summary" | "summary_large_image" | "app" | "player";
+		title?: string;
+		description?: string;
+		image?: string;
+		imageAlt?: string;
+		site?: string;
+		creator?: string;
+	};
 }
 
-const { title, subtitle, description, author, article } = Astro.props;
+const { title, subtitle, description, author, article, openGraphOverride, twitterOverride } = Astro.props;
 
 const canonicalPathname = canonicalPath(Astro.url.pathname);
 const canonicalUrl = new URL(canonicalPathname, Astro.site);
@@ -25,7 +42,34 @@ const siteUrl = Astro.site?.toString() ?? canonicalUrl.origin;
 
 const pageTitle = subtitle ?? title;
 const ogLocale = Astro.currentLocale?.replace(/-(\w+)/, (_, region: string) => `_${region.toUpperCase()}`);
-const ogImageUrl = (article ? new URL(`${canonicalPathname}/graph.png`, Astro.site) : new URL("graph.png", Astro.site)).toString();
+const defaultOgImageUrl = (article ? new URL(`${canonicalPathname}/graph.png`, Astro.site) : new URL("graph.png", Astro.site)).toString();
+
+// Resolve OG image: override (URL or path) or default graph.png
+const ogImageUrl =
+	openGraphOverride?.image != null
+		? openGraphOverride.image.startsWith("http")
+			? openGraphOverride.image
+			: new URL(openGraphOverride.image.replace(/^\//, ""), Astro.site).toString()
+		: defaultOgImageUrl;
+
+const defaultOgTitle = subtitle ? `${subtitle} | ${title}` : title;
+const defaultOgDescription = description;
+const ogTitle = openGraphOverride?.title ?? defaultOgTitle;
+const ogDescription = openGraphOverride?.description ?? defaultOgDescription;
+const ogImageAlt = openGraphOverride?.imageAlt ?? title;
+const ogImageWidth = openGraphOverride?.imageWidth ?? 1200;
+const ogImageHeight = openGraphOverride?.imageHeight ?? 630;
+
+const twitterCard = twitterOverride?.card ?? "summary_large_image";
+const twitterTitle = twitterOverride?.title ?? ogTitle;
+const twitterDescription = twitterOverride?.description ?? ogDescription;
+const twitterImage =
+	twitterOverride?.image != null
+		? twitterOverride.image.startsWith("http")
+			? twitterOverride.image
+			: new URL(twitterOverride.image.replace(/^\//, ""), Astro.site).toString()
+		: ogImageUrl;
+const twitterImageAlt = twitterOverride?.imageAlt ?? ogImageAlt;
 
 // WebSite JSON-LD (all pages) – from site config
 const websiteJsonLd = {
@@ -91,20 +135,20 @@ const notoFonts: Record<string, string> = {
 			charset="utf-8"
 			openGraph={{
 				basic: {
-					title: subtitle ? `${subtitle} | ${title}` : title,
+					title: ogTitle,
 					type: article ? "article" : "website",
 					image: ogImageUrl,
 					url: canonicalUrl.toString()
 				},
 				optional: {
-					description,
+					description: ogDescription,
 					siteName: title,
 					locale: ogLocale
 				},
 				image: {
-					alt: title,
-					width: 1200,
-					height: 630
+					alt: ogImageAlt,
+					width: ogImageWidth,
+					height: ogImageHeight
 				},
 				...(article && {
 					article: {
@@ -115,7 +159,15 @@ const notoFonts: Record<string, string> = {
 					}
 				})
 			}}
-			twitter={{ card: "summary_large_image" }}
+			twitter={{
+				card: twitterCard,
+				...(twitterOverride?.site != null && { site: twitterOverride.site }),
+				...(twitterOverride?.creator != null && { creator: twitterOverride.creator }),
+				title: twitterTitle,
+				description: twitterDescription,
+				image: twitterImage,
+				imageAlt: twitterImageAlt
+			}}
 		/>
 
 		<meta name="viewport" content="width=device-width" />
