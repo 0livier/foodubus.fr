@@ -1,8 +1,8 @@
 ---
 title: Le Fleuriste
-timestamp: 2026-01-03 00:11:23+01:01
+timestamp: 2026-01-03 00:11:23+01:00
 tags: [Haïku]
-description: "Atelier d'écriture au Bus Magique de Lille début janvier 2026"
+description: "Haïku écrit lors d'un atelier d'écriture au Bus Magique de Lille, début janvier 2026. Un fleuriste amoureux et ses belles pensées."
 toc: false
 top: 0
 ---
