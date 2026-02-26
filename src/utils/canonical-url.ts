@@ -1,11 +1,17 @@
+/** Paths that are static assets (no trailing slash). */
+const STATIC_EXT = /\.(xml|xsl|json|ico|png|svg|webmanifest|css|js|txt|webp)$/i;
+
 /**
  * Canonical URL policy: hyphens in slugs, trailing slash always (except root).
+ * Static assets (images, css, js, etc.) never get trailing slash.
  * Use for redirect targets and for <link rel="canonical"> / og:url.
  */
 export function canonicalPath(pathname: string): string {
 	const normalized = pathname === "/" ? "/" : pathname.replace(/\/+$/, "") || "/";
 	const withHyphens = normalized.replace(/_/g, "-");
-	return withHyphens === "/" ? "/" : `${withHyphens}/`;
+	if (withHyphens === "/") return "/";
+	if (STATIC_EXT.test(withHyphens)) return withHyphens;
+	return `${withHyphens}/`;
 }
 
 /**
@@ -15,9 +21,6 @@ export function pathNeedsRedirect(pathname: string): boolean {
 	const canonical = canonicalPath(pathname);
 	return pathname !== canonical;
 }
-
-/** Paths that are static assets (no trailing slash). */
-const STATIC_EXT = /\.(xml|xsl|json|ico|png|svg|webmanifest|css|js|txt|webp)$/i;
 
 /**
  * Returns the canonical path for internal links (trailing slash for pages).
