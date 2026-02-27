@@ -8,6 +8,8 @@ interface Props {
 	subtitle?: string;
 	description: string;
 	author?: string;
+	/** When set (e.g. "Lavande"), applied as data-series on body for theme accents */
+	series?: string;
 	article?: {
 		timestamp: Date;
 		section?: string;
@@ -34,7 +36,7 @@ interface Props {
 	};
 }
 
-const { title, subtitle, description, author, article, openGraphOverride, twitterOverride } = Astro.props;
+const { title, subtitle, description, author, series, article, openGraphOverride, twitterOverride } = Astro.props;
 
 const canonicalPathname = canonicalPath(Astro.url.pathname);
 const canonicalUrl = new URL(canonicalPathname, Astro.site);
@@ -204,7 +206,7 @@ const notoFonts: Record<string, string> = {
 			if (theme) document.documentElement.dataset.theme = theme;
 		</script>
 	</head>
-	<body>
+	<body {...(series && { "data-series": series })}>
 		<slot />
 	</body>
 </html>

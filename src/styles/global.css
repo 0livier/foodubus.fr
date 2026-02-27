@@ -24,6 +24,11 @@
 --selection-color-dark: #f5c54255;
 --accent-color-dark: #f5c542;
 
+/* Series "Lavande" accent (violet foncé) */
+--accent-color-lavande: #8b60b3;
+--selection-color-lavande: #8b60b355;
+--accent-color-lavande-light: #8b60b3;
+--selection-color-lavande-light: #8b60b366;
 
 	/* Default to dark values */
 	--primary-color: var(--primary-color-dark);
@@ -94,6 +99,16 @@
 [data-theme="dark"] .astro-code span {
 	color: var(--shiki-dark) !important;
 	background-color: var(--shiki-dark-bg) !important;
+}
+
+/* Accent overrides for series "Lavande" (body has data-series, theme is on html) */
+body[data-series="Lavande"] {
+	--accent-color: var(--accent-color-lavande);
+	--selection-color: var(--selection-color-lavande);
+}
+html[data-theme="light"] body[data-series="Lavande"] {
+	--accent-color: var(--accent-color-lavande-light);
+	--selection-color: var(--selection-color-lavande-light);
 }
 
 /* Base reset styles */

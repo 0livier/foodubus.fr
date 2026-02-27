@@ -17,6 +17,7 @@ const {
 	locale = config.i18n.defaultLocale,
 	title: subtitle,
 	description = config.description,
+	series,
 	article,
 	openGraph: openGraphOverride,
 	twitter: twitterOverride
@@ -34,8 +35,21 @@ const title = config.title;
 	// Add zoom effect to images within markdown content
 	window.zoom = () => zoom(".markdown img:not([data-nozoom])", { background: "#00000044" });
 
+	// Sync data-series from main (or first element with it) to body for accent theming (e.g. Lavande).
+	// Needed because Swup replaces only the main content, not the body.
+	function syncBodySeries() {
+		const el = document.querySelector("main [data-series]");
+		const value = el?.getAttribute("data-series");
+		if (value) {
+			document.body.dataset.series = value;
+		} else {
+			delete document.body.dataset.series;
+		}
+	}
+
 	// Page initialization function
 	function initialize() {
+		syncBodySeries();
 		localizeTimes();
 		window.zoom();
 	}
@@ -45,12 +59,19 @@ const title = config.title;
 
 	// Listen for page load event and re-initialize on page transitions
 	document.addEventListener("astro:page-load", initialize);
+
+	// Sync body data-series after Swup replaces content (no full reload)
+	if (typeof window !== "undefined" && window.swup) {
+		window.swup.hooks.on("page:load", syncBodySeries);
+	}
+	document.addEventListener("swup:enable", () => window.swup?.hooks.on("page:load", syncBodySeries));
 </script>
 
 <App
 	{title}
 	{subtitle}
 	{description}
+	{series}
 	{article}
 	author={config.author.name}
 	openGraphOverride={openGraphOverride}
