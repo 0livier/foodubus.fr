@@ -7,9 +7,9 @@ On l'a toutes et tous déjà croisée. La personne qui parle seule dans le bus d
 
 Et parfois... On entend une phrase tellement évidente qu'on se demande comment on n'y avait jamais pensé. Un rire franc qui coupe le silence triste des transports. Un regard qui nous dépasse.
 
-**C'est un peu ça, la folle ou le fou du bus. Une fissure dans la normalité. Quelqu'un qui refuse les cases.**
+**C'est un peu ça, la folle ou le fou du bus. Une fissure dans la normalité. Quelqu'un qui refuse les cases. La littérature, elle, a raté ce bus depuis longtemps.**
 
-La littérature se gare trop souvent dans les beaux quartiers. En SUV. Les grandes maisons ne froissent personne et publient au moment qui maximise les profits. Quelle folie.
+Elle se gare trop souvent dans les beaux quartiers. En SUV. Les grandes maisons ne froissent personne et publient au moment qui maximise les profits. Quelle folie.
 
 Ici, on distribue au fil de l'eau ce qu'on aimerait avoir dans le bus un lundi matin gris. Ce qui nous fait dire tout haut "Putain, oui." Et _passer_ pour des fous.
 
