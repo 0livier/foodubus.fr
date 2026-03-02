@@ -49,3 +49,32 @@ Au-dessus de nous, le tube fluorescent clignote et la lumière dans la pièce fl
 Margaret ferme les yeux et penche légèrement la tête. Mes doigts frôlent sa joue, tracent le contour de sa mâchoire.
 
 — Oui.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# Remerciements
+
+### À Claire A.
+
+Merci pour le défi. Je n’aurais jamais pensé m’essayer à l’écriture, au-delà de mes tentatives pour être drôle dans le nombre contraint de caractères imposé par les apps. J’ai vécu l’exercice comme on assemble un château de cartes : plus j’en rajoutais, plus l’édifice demandait de la finesse, patience et d’attention. J’en suis d’autant plus admiratif des autrices et auteurs qui parviennent à garder cohérent et passionnant un univers sur des milliers de pages. J’espère que tu apprécieras cette courte histoire autant que j’ai aimé l’écrire, et j’ai hâte de découvrir la tienne.
+
+### Le club d’écriture “Shut Up & Write!” de Lille
+
+Pour votre accueil chaleureux, pour la diversité de vos voix et de vos approches. Vous m’avez montré qu’écrire n’est pas qu’un exercice solitaire, mais peut être un partage, une écoute ou un éclat de rire autour d’un verre.  Et merci surtout de m’avoir poussé à lire à voix haute les premiers mots de Mags.
+
+### La fromagerie Philippe Olivier, 3 Rue du Cure Saint-Etienne à Lille
+
+Pour vos conseils avisés, tant pour mes papilles que pour les ajustements qui ont été nécessaires dans ces pages.
+
+### Les personnes qui m’ont ouvert les yeux, bousculé, éduqué ou inspiré
+
+Je vous dois une partie de cette nouvelle.
+
+Alexandrine, Céline, Sophie, Sylvain, Jason, Sarah, Pauline, Lyline, Nadège, Marlène, Claire, Nicolas.
