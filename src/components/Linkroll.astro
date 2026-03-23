@@ -2,6 +2,8 @@
 import i18nit from "$i18n";
 import Icon from "$components/Icon.svelte";
 
+type IconName = `${string}--${string}`;
+
 interface Props {
 	/** Current locale/language code */
 	locale: string;
@@ -38,7 +40,7 @@ const types = {
 	creative: { name: t("type.creative"), icon: "lucide--palette" },
 	lifestyle: { name: t("type.lifestyle"), icon: "lucide--coffee" },
 	general: { name: t("type.general"), icon: "lucide--box" }
-};
+} satisfies Record<string, { name: string; icon: IconName }>;
 
 const fallback = "/linkback.webp";
 ---

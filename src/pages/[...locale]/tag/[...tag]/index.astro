@@ -6,7 +6,7 @@ import Base from "$layouts/Base.astro";
 import Time from "$utils/time";
 import Icon from "$components/Icon.svelte";
 import i18nit from "$i18n";
-import { tagSlug } from "$utils/slug";
+import { tagSlug as toTagSlug } from "$utils/slug";
 import { getTagIntro } from "$utils/tag-intros";
 import { canonicalPagePath } from "$utils/canonical-url";
 
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 	// Collect (tag, locale) and group by slug so one URL per slug (tags that slug the same share a page)
 	const slugToTagsByLocale = new Map<string, Map<string, Set<string>>>();
 	function addTag(tag: string, locale: string) {
-		const slug = tagSlug(tag);
+		const slug = toTagSlug(tag);
 		if (!slugToTagsByLocale.has(slug)) slugToTagsByLocale.set(slug, new Map());
 		const byLocale = slugToTagsByLocale.get(slug)!;
 		if (!byLocale.has(locale)) byLocale.set(locale, new Set());
@@ -25,11 +25,15 @@ export async function getStaticPaths() {
 	}
 	for (const note of notes) {
 		const locale = monolocale ? config.i18n.defaultLocale : note.id.split("/")[0];
-		note.data.tags?.forEach((tag: string) => addTag(tag, locale));
+		note.data.tags?.forEach((tag: string) => {
+			addTag(tag, locale);
+		});
 	}
 	for (const jotting of jottings) {
 		const locale = monolocale ? config.i18n.defaultLocale : jotting.id.split("/")[0];
-		jotting.data.tags?.forEach((tag: string) => addTag(tag, locale));
+		jotting.data.tags?.forEach((tag: string) => {
+			addTag(tag, locale);
+		});
 	}
 
 	const paths: { params: { locale?: string; tag: string }; props: { tags: string[] } }[] = [];
@@ -50,8 +54,8 @@ export async function getStaticPaths() {
 const { locale = config.i18n.defaultLocale, tag: tagSlugParam } = Astro.params;
 const { tags: tagList } = Astro.props;
 const tag = [...tagList].sort((a, b) => a.localeCompare(b))[0]; // primary tag for heading
-const tagSlug = typeof tagSlugParam === "string" ? tagSlugParam : tagSlugParam?.[0];
-const tagIntro = tagSlug ? getTagIntro(tagSlug) : undefined;
+const tagSlugValue = typeof tagSlugParam === "string" ? tagSlugParam : tagSlugParam?.[0];
+const tagIntro = tagSlugValue ? getTagIntro(tagSlugValue) : undefined;
 
 const t = i18nit(locale);
 

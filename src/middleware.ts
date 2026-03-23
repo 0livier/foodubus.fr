@@ -9,7 +9,7 @@ export const onRequest = defineMiddleware((context, next) => {
 	const pathname = context.url.pathname;
 	if (import.meta.env.DEV && FEED_PATH_NO_SLASH.test(pathname)) {
 		const url = new URL(context.url);
-		url.pathname = pathname + "/";
+		url.pathname = `${pathname}/`;
 		return context.rewrite(url);
 	}
 	// In dev, don't redirect /feed.xml/ -> /feed.xml or we loop (rewrite sends us to /feed.xml/).

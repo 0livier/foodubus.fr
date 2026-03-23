@@ -365,7 +365,6 @@
 		/* KaTeX math */
 		.katex {
 			* {
-				/* biome-ignore lint/a11y/useGenericFontNames: https://github.com/biomejs/biome/issues/8339 */
 				font-family: "KaTeX_Main", var(--serif);
 			}
 		}
