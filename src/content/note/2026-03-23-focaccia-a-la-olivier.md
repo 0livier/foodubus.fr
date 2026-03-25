@@ -42,7 +42,7 @@ Et quand on enfonce les doigts dedans avant cuisson, on comprend assez vite qu�
 6. Couvre le cul de poule avec un film alimentaire ou un grand torchon et laisser lever 12 h au frigo.
 7. Sors la pâte et laisser à température ambiante 15 min, toujours couverte.
 8. Fais une série de rabats : attrape un bord, étire-le doucement et ramène-le vers le centre. Tourne le saladier d’un quart de tour et recommence. Huit fois au total. Oui, ça compte.
-9. Là, il faut huiler généreusement le fond et les bords du moule. Généreusement. Ouais.
+9. Là, il faut huiler généreusement le fond et les bords du moule. Généreusement. Ouais. Je préfère huiler le moule mais certaines personnes préfèrent utiliser du papier cuisson. Ça marche aussi, mais c'est moins gourmand.
 10. Déposer la pâte dans le moule et l’étaler doucement. La laisser épouser les bords du moule. Je trouve ça très satisfaisant à regarder
 11. Laisser lever 1 h 30 à 2 h à température ambiante, jusqu’à ce qu’elle soit bien gonflée.
 12. Préchauffe le four à 230 °.
