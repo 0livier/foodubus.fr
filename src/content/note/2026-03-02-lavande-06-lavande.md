@@ -72,9 +72,3 @@ Pour votre accueil chaleureux, pour la diversité de vos voix et de vos approche
 ### La fromagerie Philippe Olivier, 3 Rue du Cure Saint-Etienne à Lille
 
 Pour vos conseils avisés, tant pour mes papilles que pour les ajustements qui ont été nécessaires dans ces pages.
-
-### Les personnes qui m’ont ouvert les yeux, bousculé, éduqué ou inspiré
-
-Je vous dois une partie de cette nouvelle.
-
-Alexandrine, Céline, Sophie, Sylvain, Jason, Sarah, Pauline, Lyline, Nadège, Marlène, Claire, Nicolas.
