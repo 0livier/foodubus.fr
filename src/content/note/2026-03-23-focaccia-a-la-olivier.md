@@ -6,11 +6,9 @@ tags: [Recette]
 
 Il y a des recettes qui demandent de la technique, de la précision, un peu de sueur froide et trois thermomètres. Celle-ci demande surtout de l’huile d’olive, un peu d’anticipation, et l’envie très simple de faire quelque chose de bon avec ses mains.
 
-La pâte colle. C’est son travail.
+La pâte colle. C'est normal.
 L’huile semble excessive. Elle ne l’est pas.
 Et quand on enfonce les doigts dedans avant cuisson, on comprend assez vite qu’on est sur quelque chose de sérieux.
-
-Cette focaccia ne cherche pas à être raisonnable. Elle cherche à être moelleuse dedans, croustillante dessous, dorée dessus, et à disparaître trop vite une fois posée sur la table. C’est déjà beaucoup.
 
 ## **Ingrédients**
 
@@ -54,5 +52,5 @@ Cette focaccia ne cherche pas à être raisonnable. Elle cherche à être moelle
 16. Enfourne pour 25 à 30 min. Surveille à partir de 23 min pour t'assurer que ça crame pas. Ça serait con.
 17. Optionnel : vers 26-28 min, ajouter du Grana Padano râpé et poursuivre la cuisson jusqu’à ce qu’il fonde et dore légèrement. Genre une minute maximum. Attention, il peut bruler si laissé trop longtemps.
 18. Sors la bête du four sans y laisser tes doigts.
-18. Démoule dès la sortie du four et laisser reposer sur une grille pour garder le fond croustillant.
-19. Essaie de ne pas la dévorer tout de suite.
+19. Démoule dès la sortie du four et laisser reposer sur une grille pour garder le fond croustillant.
+20. Essaie de ne pas la dévorer tout de suite.
