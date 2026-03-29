@@ -98,7 +98,7 @@ _Il comprend les femmes. Il veut juste prendre soin de toi. Ce soir si possible 
 
 <div class="bingo-grid" aria-label="Grille 3 - Le MMM (Mec Manifestement Motivé)">
  <div class="bingo-card">"Je suis très à l'écoute"</div>
- <div class="bingo-card">A lu la 4e de couv' de <em>King Kong Théorie</em></div>
+ <div class="bingo-card">A lu la 4e de couv' de Jouissance Club</div>
  <div class="bingo-card">"Le consentement, c'est vraiment central pour moi"</div>
  <div class="bingo-card">"Je ne suis pas comme les autres mecs"</div>
  <div class="bingo-card">Utilise "safe space", "boundaries" et "intégrer" dans la même phrase</div>
