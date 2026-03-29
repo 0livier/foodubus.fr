@@ -29,6 +29,9 @@
 		}
 
 		hr {
+			margin-block: 1.75em;
+			padding-block: 0.75em;
+			border: none;
 			border-bottom: 1px dashed var(--remark-color);
 		}
 
@@ -223,6 +226,91 @@
 		div.table-wrapper {
 			padding-bottom: 0.5em;
 			overflow-x: auto;
+		}
+
+		/* Bullshit bingo — minimalist card grid */
+		.bingo-grid {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 12px;
+			background-color: #000000;
+			padding: 20px;
+			border-radius: 4px;
+			font-family: Inter, "Source Sans 3", system-ui, sans-serif;
+			max-width: 100%;
+			box-sizing: border-box;
+		}
+
+		.bingo-card {
+			background-color: #1e1e1e;
+			border: 1px solid #ccff00;
+			border-radius: 8px;
+			padding: 15px;
+			aspect-ratio: 1 / 1;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			text-align: left;
+			color: #ffffff;
+			font-size: 0.9rem;
+			line-height: 1.4;
+			transition:
+				transform 0.2s ease,
+				background-color 0.15s ease,
+				color 0.15s ease,
+				border-color 0.15s ease,
+				box-shadow 0.15s ease;
+			box-sizing: border-box;
+			overflow: hidden;
+			hyphens: auto;
+		}
+
+		.bingo-card:hover {
+			transform: scale(1.02);
+			cursor: pointer;
+		}
+
+		.bingo-card:focus-visible {
+			outline: 2px solid #ccff00;
+			outline-offset: 2px;
+		}
+
+		.bingo-card.free-space {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			color: #ccff0069;
+			font-weight: 800;
+			text-transform: uppercase;
+			border-width: 3px;
+			box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+		}
+
+		.bingo-card.selected {
+			background-color: #ccff00;
+			color: #000000;
+			border-color: #ccff00;
+		}
+
+		.bingo-card.selected:hover {
+			transform: scale(1.02);
+		}
+
+		.bingo-card.free-space.selected {
+			color: #000000;
+			box-shadow: 0 0 12px rgba(204, 255, 0, 0.45);
+		}
+
+		@media (max-width: 639px) {
+			.bingo-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (min-width: 640px) and (max-width: 1023px) {
+			.bingo-grid {
+				grid-template-columns: repeat(3, 1fr);
+			}
 		}
 
 		table {

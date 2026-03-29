@@ -47,11 +47,35 @@ const title = config.title;
 		}
 	}
 
+	let bingoInteractionBound = false;
+
+	/** Bingo cards: click / Enter / Space to toggle .selected (markdown notes only). */
+	function initBingoCardSelection() {
+		document.querySelectorAll(".markdown .bingo-card").forEach(card => {
+			card.setAttribute("tabindex", "0");
+		});
+		if (bingoInteractionBound) return;
+		bingoInteractionBound = true;
+		document.addEventListener("click", e => {
+			const card = e.target instanceof Element ? e.target.closest(".markdown .bingo-card") : null;
+			if (!card) return;
+			card.classList.toggle("selected");
+		});
+		document.addEventListener("keydown", e => {
+			if (e.key !== "Enter" && e.key !== " ") return;
+			const card = e.target instanceof Element ? e.target.closest(".markdown .bingo-card") : null;
+			if (!card || card !== document.activeElement) return;
+			e.preventDefault();
+			card.classList.toggle("selected");
+		});
+	}
+
 	// Page initialization function
 	function initialize() {
 		syncBodySeries();
 		localizeTimes();
 		window.zoom();
+		initBingoCardSelection();
 	}
 
 	// Execute initialization on first load
