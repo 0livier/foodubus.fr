@@ -82,7 +82,7 @@ _Il a 54 ans. Il dit qu'il en fait 40. Il espère que tu es d'accord._
  <div class="bingo-card">Salle de bain avec des produits "unisexe"</div>
  <div class="bingo-card">"J'écoute vraiment les femmes"</div>
  <div class="bingo-card">"Mon meilleur ami est une femme - enfin, elle l'était"</div>
- <div class="bingo-card">Connaît le prénom des enfants de ses collègues, pas leurs collègues</div>
+ <div class="bingo-card">Connaît le prénom des enfants de ses collègues</div>
  <div class="bingo-card">"Je suis en pleine reconstruction, c'est riche comme période"</div>
  <div class="bingo-card">A une représentation de Frida Kahlo en fond d'écran</div>
  <div class="bingo-card">"J'ai un rapport différent au temps depuis que j'ai arrêté ma montre"</div>
@@ -114,7 +114,7 @@ _Il comprend les femmes. Il veut juste prendre soin de toi. Ce soir si possible 
  <div class="bingo-card">"J'ai été en couple ouvert - c'est plus honnête, tu vois"</div>
  <div class="bingo-card">"Je te trouve vraiment intéressante" (n'a rien retenu)</div>
  <div class="bingo-card">"J'ai des amies qui te diraient que je suis safe"</div>
- <div class="bingo-card">Bouteilles de vin naturel sur le plan de travail</div>
+ <div class="bingo-card">Je suis clean, t'inquiète pas</div>
  <div class="bingo-card">"Je pleure facilement - c'est important de le dire"</div>
  <div class="bingo-card">"Mon ex était toxique. Ça m'a beaucoup appris sur moi"</div>
  <div class="bingo-card">"Je suis en transition - professionnellement, personnellement"</div>
