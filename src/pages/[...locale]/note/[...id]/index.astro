@@ -213,25 +213,12 @@ const notesHref = getRelativeLocaleUrl(locale, canonicalPagePath("/note"));
     </Sensitive>
 
     <!-- End ornament -->
-    <div style="
+    {!next && <div style="
       text-align: center; margin: 40px 0;
       font-family: var(--serif-display); font-size: 20px;
       color: var(--accent-color); letter-spacing: 0.4em;
       opacity: 0.7;
-    ">◆ — fin — ◆</div>
-
-    <!-- Composté bar -->
-    <div style="
-      border: 1px dashed color-mix(in srgb, var(--primary-color) 25%, transparent);
-      padding: 12px 18px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--mono-fd); font-size: 10px;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      opacity: 0.65; margin-bottom: 40px;
-    ">
-      <span>éditions du fou du bus · {ds}</span>
-      <span class="stamp stamp-strong" style="transform: rotate(-2deg); opacity: 0.8;">composté</span>
-    </div>
+    ">◆ — fin — ◆</div>}
 
     <!-- Prev / Next navigation -->
     {note.data.series && (prev || next) && (
@@ -265,6 +252,19 @@ const notesHref = getRelativeLocaleUrl(locale, canonicalPagePath("/note"));
         ) : <span />}
       </nav>
     )}
+
+    <!-- Composté bar -->
+    <div style="
+      border: 1px dashed color-mix(in srgb, var(--primary-color) 25%, transparent);
+      padding: 12px 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--mono-fd); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      opacity: 0.65; margin-bottom: 40px;
+    ">
+      <span>éditions du fou du bus · {ds}</span>
+      <span class="stamp stamp-strong" style="transform: rotate(-2deg); opacity: 0.8;">composté</span>
+    </div>
 
     <Position {locale} />
   </main>

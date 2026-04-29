@@ -117,12 +117,6 @@
       >{item.label}</a>
     {/each}
 
-    <a
-      href={feedRoute}
-      target="_blank"
-      style="color: var(--primary-color); opacity: 0.6;"
-    >flux</a>
-
     <ThemeSwitcher />
   </nav>
 </header>
