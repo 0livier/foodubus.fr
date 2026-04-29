@@ -131,7 +131,7 @@ function stickerColor(tag: string, i: number): string {
         <p style="font-size: 15px; line-height: 1.6; margin-bottom: 0; color: #1a1410; user-select: text;">Elles se garent trop souvent dans les beaux quartiers. En SUV. Elles ne froissent personne et publient au moment qui maximise les profits. Quelle folie. Ici, on distribue au fil de l'eau ce qu'on aimerait avoir dans le bus un lundi matin gris. Ce qui nous fait dire tout haut « Putain, oui. » Et passer pour des fous.</p>
 
         <!-- CTA -->
-        <div style="margin-top: 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
+        <a href={getRelativeLocaleUrl(locale, canonicalPagePath("/note"))} style="margin-top: 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; text-decoration: none;">
           <div style="
             font-family: var(--bebas); font-size: 42px; letter-spacing: 0.02em;
             background: #161210; color: #f0c14b;
@@ -141,7 +141,7 @@ function stickerColor(tag: string, i: number): string {
           <div style="font-family: var(--hand); font-size: 32px; color: var(--bordeaux); transform: rotate(2deg);">
             On va se marrer.
           </div>
-        </div>
+        </a>
 
         <!-- Signature -->
         <div style="
@@ -211,11 +211,8 @@ function stickerColor(tag: string, i: number): string {
             font-style: italic; font-weight: 500; margin: 4px 0 6px;
             color: var(--bordeaux);
           ">Lavande</h3>
-          <div style="font-family: var(--bebas); font-size: 18px; letter-spacing: 0.06em; opacity: 0.85; margin-bottom: 10px;">
-            EIDOLON · 6 CHAPITRES
-          </div>
           <p style="font-size: 14px; line-height: 1.55; margin-bottom: 14px; user-select: text;">
-            Une nouvelle en six stations. Un revenant qui n'arrive pas tout de suite à se rappeler pourquoi il est revenu.
+            Une nouvelle en six stations.
           </p>
           <div style="
             display: flex; justify-content: space-between; align-items: center;
@@ -269,18 +266,6 @@ function stickerColor(tag: string, i: number): string {
       })}
     </section>
 
-    <!-- Voir tous link -->
-    <div style="
-      padding: 0 48px 52px;
-      display: flex; justify-content: flex-end;
-    ">
-      <a href={getRelativeLocaleUrl(locale, canonicalPagePath("/note"))} style="
-        font-family: var(--mono-fd); font-size: 11px;
-        letter-spacing: 0.16em; text-transform: uppercase;
-        color: var(--ticket); border-bottom: 1px solid var(--ticket);
-        padding-bottom: 2px;
-      ">VOIR TOUS LES ÉCRITS →</a>
-    </div>
   </main>
 </Base>
 
